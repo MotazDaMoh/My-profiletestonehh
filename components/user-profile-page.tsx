@@ -116,7 +116,7 @@ export default function UserProfilePage() {
                 asChild
                 className="mt-4 w-full rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 py-2.5 text-base font-semibold text-white transition-transform duration-200 hover:scale-105 sm:mt-6"
               >
-                <a href="https://discord.com/users/9199" target="_blank" rel="noopener noreferrer">
+                <a href="https://discord.com/users/1385561005836341288" target="_blank" rel="noopener noreferrer">
                   Add Me
                 </a>
               </Button>
