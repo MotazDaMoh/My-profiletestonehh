@@ -6,22 +6,22 @@ import { X } from "lucide-react"
 
 const friends = [
   {
-    name: "Alice",
-    username: "@alice_dev",
-    avatar: "/placeholder.svg?height=48&width=48",
+    name: "Abo Tasneem",
+    username: "@abomeezo267",
+    avatar: "https://i.postimg.cc/jqGjpCKP/2c9627ed5c58f037d0abb37f0361d666.webp",
     online: true,
   },
   {
-    name: "Bob",
-    username: "@bob_codes",
-    avatar: "/placeholder.svg?height=48&width=48",
+    name: "Waseem",
+    username: "@waseemoo2",
+    avatar: "https://i.postimg.cc/ZKpq4ZKg/81ce5e316905e8ac26c79aa9b4f27f69.webp",
     online: false,
   },
   {
-    name: "Charlie",
-    username: "@charlie_ux",
-    avatar: "/placeholder.svg?height=48&width=48",
-    online: true,
+    name: "Naif",
+    username: "@naifn",
+    avatar: "https://i.postimg.cc/52J2tGXt/a644928c2ef6b51a23e47446038b7c92.png",
+    online: false,
   },
 ]
 
