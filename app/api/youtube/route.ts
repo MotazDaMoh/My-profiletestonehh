@@ -3,7 +3,7 @@ import { NextResponse } from "next/server"
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const handle = searchParams.get("handle")
-  const apiKey = process.env.YOUTUBE_API_KEY
+  const apiKey = 'AIzaSyCuzPQFDgjghNG6I3HFijj5_h-T2hn4v14'
 
   if (!apiKey) {
     console.error("YOUTUBE_API_KEY is not set in environment variables.")
