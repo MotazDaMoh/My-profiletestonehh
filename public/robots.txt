@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://motazdarawsha.vercel.app/sitemap.xml
