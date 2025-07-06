@@ -1,0 +1,668 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Critical CSS optimized for performance */
+@layer base {
+  :root {
+    /* Apple's Official Color System - Optimized */
+    --apple-black: #000000;
+    --apple-white: #ffffff;
+    --apple-athens-gray: #f5f5f7;
+    --apple-light-gray: #eeeeee;
+    --apple-medium-gray: #979797;
+    --apple-dark-gray: #666666;
+    --apple-blue: #0088cc;
+    --apple-system-blue: #007aff;
+    --apple-system-green: #34c759;
+    --apple-system-red: #ff3b30;
+
+    /* System Grays */
+    --apple-gray-1: #8e8e93;
+    --apple-gray-2: #aeaeb2;
+    --apple-gray-3: #c7c7cc;
+    --apple-gray-4: #d1d1d6;
+    --apple-gray-5: #e5e5ea;
+    --apple-gray-6: #f2f2f7;
+
+    /* Enhanced responsive spacing - Optimized calculations */
+    --spacing-xs: clamp(0.25rem, 0.5vw, 0.5rem);
+    --spacing-sm: clamp(0.5rem, 1vw, 1rem);
+    --spacing-md: clamp(1rem, 2vw, 1.5rem);
+    --spacing-lg: clamp(1.5rem, 3vw, 2rem);
+    --spacing-xl: clamp(2rem, 4vw, 3rem);
+    --spacing-2xl: clamp(3rem, 6vw, 5rem);
+
+    /* CSS Custom Properties for better performance */
+    --border-radius-xs: 6px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 18px;
+    --border-radius-xl: 24px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Critical CSS for above-the-fold content - Optimized */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    direction: rtl;
+    scroll-behavior: smooth;
+    font-size: clamp(14px, 1.2vw, 17px);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    overflow-x: hidden;
+    /* Optimize for Core Web Vitals */
+    font-display: swap;
+  }
+
+  body {
+    font-family: var(--font-noto), -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui,
+      sans-serif;
+    background-color: var(--apple-white);
+    color: var(--apple-black);
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* Performance optimizations */
+    will-change: auto;
+    contain: layout style;
+    font-display: swap;
+  }
+
+  /* Enhanced focus management for accessibility */
+  :focus {
+    outline: 2px solid var(--apple-system-blue);
+    outline-offset: 2px;
+    border-radius: var(--border-radius-sm);
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Prevent zoom on iOS - Performance optimization */
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  textarea,
+  select {
+    font-size: max(16px, 1rem);
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Image optimization for Core Web Vitals */
+  img {
+    max-width: 100%;
+    height: auto;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1000px;
+  }
+}
+
+/* Apple Typography System - Performance optimized */
+@layer utilities {
+  /* Apple Headlines - Optimized font loading */
+  .apple-headline-large {
+    font-size: clamp(2rem, 6vw + 1rem, 6rem);
+    line-height: 1.05;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--apple-black);
+    contain: layout style;
+    font-feature-settings: "kern" 1, "liga" 1;
+    font-display: swap;
+  }
+
+  .apple-headline {
+    font-size: clamp(1.5rem, 4vw + 0.5rem, 3.5rem);
+    line-height: 1.07;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--apple-black);
+    contain: layout style;
+    font-feature-settings: "kern" 1, "liga" 1;
+    font-display: swap;
+  }
+
+  .apple-subheadline {
+    font-size: clamp(1rem, 2.5vw + 0.25rem, 1.75rem);
+    line-height: 1.29;
+    font-weight: 400;
+    letter-spacing: 0.007em;
+    color: var(--apple-dark-gray);
+    contain: layout style;
+  }
+
+  .apple-body-large {
+    font-size: clamp(1rem, 1.8vw + 0.1rem, 1.3125rem);
+    line-height: 1.38;
+    font-weight: 400;
+    letter-spacing: 0.011em;
+    color: var(--apple-black);
+  }
+
+  .apple-body {
+    font-size: clamp(0.875rem, 1.2vw + 0.05rem, 1.0625rem);
+    line-height: 1.47;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    color: var(--apple-black);
+  }
+
+  .apple-caption {
+    font-size: clamp(0.75rem, 0.8vw + 0.05rem, 0.875rem);
+    line-height: 1.43;
+    font-weight: 400;
+    letter-spacing: -0.016em;
+    color: var(--apple-medium-gray);
+  }
+
+  /* Apple Colors - Optimized */
+  .apple-text-black {
+    color: var(--apple-black);
+  }
+  .apple-text-gray {
+    color: var(--apple-dark-gray);
+  }
+  .apple-text-light-gray {
+    color: var(--apple-medium-gray);
+  }
+  .apple-text-blue {
+    color: var(--apple-system-blue);
+  }
+  .apple-text-green {
+    color: var(--apple-system-green);
+  }
+  .apple-text-red {
+    color: var(--apple-system-red);
+  }
+
+  .apple-bg-white {
+    background-color: var(--apple-white);
+  }
+  .apple-bg-athens {
+    background-color: var(--apple-athens-gray);
+  }
+  .apple-bg-light-gray {
+    background-color: var(--apple-light-gray);
+  }
+
+  /* Enhanced Apple Spacing System - Optimized */
+  .apple-section-padding {
+    padding: var(--spacing-2xl) 0;
+  }
+  .apple-container-padding {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+  .apple-large-spacing {
+    margin-bottom: var(--spacing-2xl);
+  }
+  .apple-medium-spacing {
+    margin-bottom: var(--spacing-xl);
+  }
+  .apple-small-spacing {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  /* Apple Vibrancy & Translucency - Optimized */
+  .apple-vibrancy {
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    will-change: backdrop-filter;
+  }
+
+  /* Enhanced Apple Cards - Performance optimized */
+  .apple-card {
+    background-color: var(--apple-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--apple-light-gray);
+    contain: layout style;
+    will-change: transform;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+
+  .apple-card-elevated {
+    background-color: var(--apple-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--apple-light-gray);
+    contain: layout style;
+    will-change: transform;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+
+  /* Enhanced Apple Buttons - Optimized for performance */
+  .apple-button-primary {
+    background-color: var(--apple-system-blue);
+    color: var(--apple-white);
+    border-radius: 980px;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: clamp(0.875rem, 1.2vw, 1.0625rem);
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    border: none;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    contain: layout style;
+    will-change: transform, background-color;
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .apple-button-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+  }
+
+  .apple-button-primary:active {
+    transform: translateY(0);
+  }
+
+  .apple-button-secondary {
+    background-color: transparent;
+    color: var(--apple-system-blue);
+    border: 1px solid var(--apple-system-blue);
+    border-radius: 980px;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: clamp(0.875rem, 1.2vw, 1.0625rem);
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    contain: layout style;
+    will-change: transform, background-color, color;
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .apple-button-secondary:hover {
+    background-color: var(--apple-system-blue);
+    color: var(--apple-white);
+    transform: translateY(-1px);
+  }
+
+  .apple-button-secondary:active {
+    transform: translateY(0);
+  }
+
+  /* Enhanced Apple Form Elements - Optimized */
+  .apple-input {
+    background-color: var(--apple-white);
+    border: 1px solid var(--apple-gray-4);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: clamp(0.875rem, 1.2vw, 1.0625rem);
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    color: var(--apple-black);
+    transition: all var(--transition-normal);
+    contain: layout style;
+    width: 100%;
+    min-height: 44px;
+    line-height: 1.4;
+  }
+
+  .apple-input:focus {
+    outline: none;
+    border-color: var(--apple-system-blue);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+    transform: translateY(-1px);
+  }
+
+  .apple-textarea {
+    background-color: var(--apple-white);
+    border: 1px solid var(--apple-gray-4);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: clamp(0.875rem, 1.2vw, 1.0625rem);
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    color: var(--apple-black);
+    resize: vertical;
+    min-height: clamp(4rem, 8vw, 7.5rem);
+    transition: all var(--transition-normal);
+    contain: layout style;
+    width: 100%;
+    line-height: 1.5;
+  }
+
+  .apple-textarea:focus {
+    outline: none;
+    border-color: var(--apple-system-blue);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+    transform: translateY(-1px);
+  }
+
+  /* Enhanced Apple Navigation - Optimized */
+  .apple-nav {
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    contain: layout style;
+    will-change: backdrop-filter;
+    transition: all var(--transition-normal);
+  }
+
+  /* Performance Optimizations */
+  .performance-optimized {
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style paint;
+  }
+
+  /* RTL flip utility */
+  .rtl-flip {
+    transform: scaleX(-1);
+  }
+
+  /* Enhanced animations - GPU accelerated */
+  .apple-fade-in {
+    animation: appleFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .apple-slide-up {
+    animation: appleSlideUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Mobile-specific enhancements */
+  .mobile-optimized {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* Lazy loading optimization */
+  .lazy-load {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .lazy-load.loaded {
+    opacity: 1;
+  }
+}
+
+/* Enhanced Apple-style animations - Optimized */
+@keyframes appleFadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes appleSlideUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Enhanced Apple-style scrollbar */
+::-webkit-scrollbar {
+  width: clamp(6px, 1vw, 8px);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--apple-gray-3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--apple-gray-2);
+}
+
+/* Critical CSS inlining for above-the-fold content */
+.critical-above-fold {
+  contain: layout style paint;
+  content-visibility: auto;
+}
+
+/* Enhanced responsive optimizations */
+@media (max-width: 640px) {
+  .apple-card-elevated {
+    box-shadow: var(--shadow-md);
+    border-radius: var(--border-radius-md);
+  }
+
+  .apple-vibrancy {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  /* Enhanced mobile performance */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* Prevent zoom on form inputs */
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Mobile-specific button adjustments */
+  .apple-button-primary,
+  .apple-button-secondary {
+    min-height: 48px;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  /* Mobile form improvements */
+  .apple-input,
+  .apple-textarea {
+    min-height: 48px;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Tablet-specific optimizations */
+  .apple-section-padding {
+    padding: clamp(4rem, 8vw, 6rem) 0;
+  }
+
+  .apple-container-padding {
+    padding-left: clamp(2rem, 4vw, 3rem);
+    padding-right: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+@media (min-width: 1025px) {
+  /* Desktop-specific optimizations */
+  .apple-button-primary:hover,
+  .apple-button-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .apple-card:hover,
+  .apple-card-elevated:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .apple-card,
+  .apple-card-elevated {
+    border-width: 0.5px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .apple-fade-in,
+  .apple-slide-up {
+    animation: none;
+  }
+
+  .apple-button-primary:hover,
+  .apple-button-secondary:hover,
+  .apple-card:hover,
+  .apple-card-elevated:hover {
+    transform: none;
+  }
+}
+
+/* Dark mode support (future-proofing) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --apple-black: #ffffff;
+    --apple-white: #000000;
+    --apple-athens-gray: #1c1c1e;
+    --apple-light-gray: #2c2c2e;
+    --apple-medium-gray: #8e8e93;
+    --apple-dark-gray: #aeaeb2;
+  }
+}
+
+/* Print styles */
+@media print {
+  .apple-nav,
+  .apple-button-primary,
+  .apple-button-secondary {
+    display: none !important;
+  }
+
+  .apple-card,
+  .apple-card-elevated {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+}
+
+/* Container queries support */
+@container (max-width: 768px) {
+  .apple-headline-large {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .apple-headline {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+}
+
+/* Performance optimizations for Core Web Vitals */
+img {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1000px;
+}
+
+/* Optimize for LCP */
+.hero-content {
+  contain: layout style paint;
+}
+
+/* Optimize for CLS */
+.layout-stable {
+  contain: layout;
+}
+
+/* Optimize for FID */
+.interactive-element {
+  contain: layout style;
+  will-change: transform;
+}
+
+/* Enhanced mobile touch interactions */
+@media (hover: none) and (pointer: coarse) {
+  .apple-button-primary:active,
+  .apple-button-secondary:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  .apple-card:active,
+  .apple-card-elevated:active {
+    transform: scale(0.99);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Font loading optimization */
+@font-face {
+  font-family: "Noto Sans Arabic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/noto-sans-arabic-v18-arabic-regular.woff2") format("woff2");
+  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+}
+
+@font-face {
+  font-family: "Noto Sans Arabic";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/noto-sans-arabic-v18-arabic-600.woff2") format("woff2");
+  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+}

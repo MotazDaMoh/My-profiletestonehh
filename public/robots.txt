@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://embed-builder.vercel.app/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Block unnecessary paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow important pages
+Allow: /copyright
+Allow: /na7la
+
+# Block sensitive files
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
